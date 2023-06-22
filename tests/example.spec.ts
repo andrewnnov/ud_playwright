@@ -34,7 +34,8 @@ test.skip("Selectors", async ({page}) => {
 })
 
 test.describe("My first test suit", () => {
-    test("Assertions", async ({page}) => {
+
+    test("Assertions @myTag", async ({page}) => { //we use npx ..... --grep @myTag opposit npx playwright test --grep-invert @myTag
         await page.goto('https://www.example.com');
         await expect(page).toHaveURL('https://www.example.com');
         await expect(page).toHaveTitle('Example Domain');
@@ -48,7 +49,7 @@ test.describe("My first test suit", () => {
         await expect(notExistingElement).not.toBeVisible();
     })
 
-    test("Working with imputs", async ({page}) => {
+    test("Working with imputs @myTag", async ({page}) => {
         await page.goto('http://zero.webappsecurity.com/index.html');
         await page.click('#signin_button');
     
@@ -62,4 +63,6 @@ test.describe("My first test suit", () => {
     })
 
 })
+
+
 
