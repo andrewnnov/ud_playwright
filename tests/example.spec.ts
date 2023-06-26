@@ -64,5 +64,18 @@ test.describe("My first test suit", () => {
 
 })
 
+test.only("Mercado libre", async ({page}) => {
+    //test.setTimeout(120000);
+    await page.goto('https://www.mercadolibre.com.ar/');     
+    await page.click("//button[text()='Aceptar cookies']");    
+    await page.locator("//a[@class='nav-menu-categories-link']").hover();     
+    const modaElement = await page.locator("//div[@class='nav-categs']//li/a[text()='Moda']");
+    modaElement.click();
+    await page.waitForURL("https://www.mercadolibre.com.ar/c/ropa-y-accesorios#menu=categories");
+    const carusItem = await page.locator("//div[@class='carousel__item__3']//h3[text()='OFERTAS DEL DÍA']");
+    await expect(carusItem).toBeVisible();   
+
+})
+
 
 
