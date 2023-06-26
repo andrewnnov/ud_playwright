@@ -33,3 +33,6 @@ export default config
 
 
 //npx playwright test --config=playwright.config.ts --project=FireFox
+
+//reporter npx playwright test --config=playwright.config.ts --project='Chromium' --reporter=line 
+//reporter npx playwright test --config=playwright.config.ts --project='Chromium' --reporter=list 
