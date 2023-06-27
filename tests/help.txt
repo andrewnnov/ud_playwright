@@ -1,0 +1,16 @@
+
+LAUNCH TEST
+npx playwright test --config=playwright.config.ts --project=FireFox
+
+
+REPORTER (les13)
+npx playwright test --config=playwright.config.ts --project=Chromium --reporter=html
+npx playwright test --config=playwright.config.ts --project='Chromium' --reporter=line 
+npx playwright test --config=playwright.config.ts --project='Chromium' --reporter=list 
+
+
+SCREENSHOTS (les14)
+1. Full page
+2. Current element
+
+

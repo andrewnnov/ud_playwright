@@ -64,7 +64,7 @@ test.describe("My first test suit", () => {
 
 })
 
-test.only("Mercado libre", async ({page}) => {
+test("Mercado libre", async ({page}) => {
     //test.setTimeout(120000);
     await page.goto('https://www.mercadolibre.com.ar/');     
     await page.click("//button[text()='Aceptar cookies']");    
@@ -76,6 +76,26 @@ test.only("Mercado libre", async ({page}) => {
     await expect(carusItem).toBeVisible();   
 
 })
+
+test.describe.only("Hooks", () => {
+
+    test.beforeEach(async ({page}) => {
+        await page.goto('https://www.example.com');
+    })   
+
+    test("Screenshots", async ({page}) => {        
+        await page.screenshot({path: 'screnshot.png', fullPage: true})
+    })
+    
+    test("Single element screenshot", async ({page}) => {        
+        const element = await page.$('h1');
+        await element?.screenshot({path: "single_element_screenshot.png"})
+    })
+
+})
+
+
+
 
 
 
