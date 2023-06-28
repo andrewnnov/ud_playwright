@@ -2,7 +2,6 @@
 LAUNCH TEST
 npx playwright test --config=playwright.config.ts --project=FireFox
 
-
 REPORTER (les13)
 npx playwright test --config=playwright.config.ts --project=Chromium --reporter=html
 npx playwright test --config=playwright.config.ts --project='Chromium' --reporter=line 
@@ -12,5 +11,15 @@ npx playwright test --config=playwright.config.ts --project='Chromium' --reporte
 SCREENSHOTS (les14)
 1. Full page
 2. Current element
+
+
+NODE SCRIPT (les17)
+create scripts in package.json  "tests:chrome": "playwright test --config=playwright.config.ts --project=Chromium"
+and run it  npm run tests:chrome
+
+overide run  npm run tests:webkit -- --headed (add headless mode in comand line)
+
+PARALLEL EXECUTION
+test.describe.parallel.only
 
 
