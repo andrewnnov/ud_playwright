@@ -8,6 +8,7 @@
     "tests:firefox": "playwright test --config=playwright.config.ts --project=FireFox",
     "tests:webkit": "playwright test --config=playwright.config.ts --project=Webkit",
     "tests:e2e": "playwright test --config=e2e.config.ts --project=Chromium",
+    "tests:e2ef": "playwright test --config=e2e.config.ts --project=FireFox",
     "tests:mle2e": "playwright test --config=mle2e.config.ts --project=Chromium"
   },
   "author": "",

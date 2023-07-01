@@ -20,15 +20,21 @@ test.describe("Login / Logout Flow", () => {
     })
 
     //positive
-    test.only("Positive scenario for login + logout", async ({page}) => {
+    test("Positive scenario for login + logout", async ({page}) => {
         await page.click("#signin_button")
         await page.type("#user_login", "username");
         await page.type("#user_password", "password")
         await page.click("text=Sign in")
-        await page.pause();
-
-        // const errorMessage = await page.locator(".alert-error");
-        // await expect(errorMessage).toContainText("Login and/or password are wrong.");  
+        //await page.pause();
+        const accountSummaryTab = await page.locator("#account_summary_tab");
+        await expect(accountSummaryTab).toBeVisible();    
+        
+        await page.goto("http://zero.webappsecurity.com/logout.html");
+        await expect(page).toHaveURL('http://zero.webappsecurity.com/index.html');
     })
-
 })
+
+
+
+
+
