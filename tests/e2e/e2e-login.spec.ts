@@ -1,10 +1,15 @@
 import {test, expect} from "@playwright/test"
+import { LoginPage } from "../../page-objects/LoginPage";
 
-test.describe("Login / Logout Flow", () => {
+test.describe.parallel.only("Login / Logout Flow", () => {
+
+    let loginPage: LoginPage;
 
     //before hook
     test.beforeEach(async ({page}) => {
-        await page.goto('http://zero.webappsecurity.com/');
+        loginPage = new LoginPage(page);
+        //await page.goto('http://zero.webappsecurity.com/');
+        await loginPage.visit();
     })
 
     //negative

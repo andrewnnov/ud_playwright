@@ -8,7 +8,7 @@ test.describe.parallel("Feedback form", () => {
     })
 
     //reset feedback form
-    test.only("Reset feedback form", async ({page}) => {
+    test("Reset feedback form", async ({page}) => {
         await page.type('#name', 'somename');
         await page.type('#subject', 'someesubject');
         await page.type('#email', 'someemail@com.com');
@@ -22,7 +22,7 @@ test.describe.parallel("Feedback form", () => {
 
 
     //submit feedback form
-    test.only("Submit feedback form", async ({page}) => {
+    test("Submit feedback form", async ({page}) => {
         await page.type('#name', 'somename');
         await page.type('#subject', 'someesubject');
         await page.type('#email', 'someemail@com.com');
