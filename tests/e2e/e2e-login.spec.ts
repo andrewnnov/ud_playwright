@@ -19,6 +19,7 @@ test.describe("Login / Logout Flow", () => {
     test.skip("Negative scenario for login", async ({page}) => {        
         await homePage.clickOnSignIn();      
         await loginPage.login("invalidusername", "invalidpassword");
+        await loginPage.wait(3000);
         await loginPage.assertErrorMessage();         
     })
 
