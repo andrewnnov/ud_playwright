@@ -38,10 +38,10 @@ export class LoginPage extends AbstractPage {
     }
 
     async snapshotLoginForm() {
-        await expect(await this.loginForm.screenshot()).toMatchSnapshot('login-form.png');        
+        expect(await this.loginForm.screenshot()).toMatchSnapshot('login-form.png');        
     }
 
     async snapshotErrorMessage() {
-        await expect(await this.errorMessage.screenshot()).toMatchSnapshot('login-error.png');
+        expect(await this.errorMessage.screenshot()).toMatchSnapshot('login-error.png');
     }
 }
