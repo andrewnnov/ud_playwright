@@ -30,13 +30,26 @@ test.describe.only("Tips and Trics Section", () => {
         })
     }
 
-    test.only("Mouse movement sumulation", async ({page}) => {
+    test("Mouse movement sumulation", async ({page}) => {
         await page.goto("https://www.example.com");
         await page.mouse.move(0, 0);
         await page.mouse.down();
         await page.mouse.move(0, 100);
         await page.mouse.up();
     })
+
+    test.only("Multiple browser tabs inside 1 browse", async({browser}) => {
+        const context = await browser.newContext();
+        const page1 = await context.newPage();
+        const page2 = await context.newPage();
+        const page3 = await context.newPage();
+        await page1.goto("https://www.example.com");
+        await page2.goto("https://www.example.com");
+        await page3.goto("https://www.example.com");
+        await page1.waitForTimeout(5000);        
+    })
+
+
 
     
 
