@@ -29,4 +29,7 @@ npx playwright test --config=visual.config.ts --project=chromium --update-snapsh
 RETRIES
 npx playwright test --config=playwright.config.ts --project=Chromium --retries=3
 
+DEVICE EMULATION
+npx playwright open --device="iPhone 11" wikipedia.org   
+
 
