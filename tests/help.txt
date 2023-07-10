@@ -35,4 +35,10 @@ npx playwright open --device="iPhone 11" wikipedia.org
 GENERATE PDF FILES
 npx playwright pdf https://example.com my-file.pdf
 
+GENERATE CUSTOMIZED SCREENSHOTS
+npx playwright screenshot --device="iPhone 11" --color-scheme=dark --wait-for-timeout=3000 twitter.com twitter-iphone-image.png
+
+LANG AND TIMEZONE
+npx playwright open --timezone="Europe/Rome" --lang="it-IT" google.com
+
 

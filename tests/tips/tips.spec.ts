@@ -47,7 +47,7 @@ test.describe.only("Tips and Trics Section", () => {
         await page2.goto("https://www.example.com");
         await page3.goto("https://www.example.com");
         await page1.waitForTimeout(5000);        
-    })   
+    })    
 
 })
 
