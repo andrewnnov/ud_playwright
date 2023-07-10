@@ -30,6 +30,9 @@ RETRIES
 npx playwright test --config=playwright.config.ts --project=Chromium --retries=3
 
 DEVICE EMULATION
-npx playwright open --device="iPhone 11" wikipedia.org   
+npx playwright open --device="iPhone 11" wikipedia.org  
+
+GENERATE PDF FILES
+npx playwright pdf https://example.com my-file.pdf
 
 
