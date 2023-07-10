@@ -30,6 +30,14 @@ test.describe.only("Tips and Trics Section", () => {
         })
     }
 
+    test.only("Mouse movement sumulation", async ({page}) => {
+        await page.goto("https://www.example.com");
+        await page.mouse.move(0, 0);
+        await page.mouse.down();
+        await page.mouse.move(0, 100);
+        await page.mouse.up();
+    })
+
     
 
 })
