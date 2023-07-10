@@ -16,6 +16,22 @@ test.describe.only("Tips and Trics Section", () => {
         test.fixme(browserName === "chromium", "Test is not stable needs revision")
         await page.goto("https://www.example.com");
     })
+
+    test("Test for retries", async ({page, browserName}) => {        
+        await page.goto("https://www.example.com");
+    })
+
+    const people =["Mike", "Judy", "Elon", "Alice"]
+    for (const name of people) {
+        test(`Running test for ${name}`, async ({page}) => {
+            await page.goto("http://zero.webappsecurity.com/index.html")
+            await page.type("#searchTerm", `${name}`)
+            await page.waitForTimeout(3000);
+        })
+    }
+
+    
+
 })
 
 

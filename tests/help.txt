@@ -26,4 +26,7 @@ test.describe.parallel.only
 UDPATE snapshots
 npx playwright test --config=visual.config.ts --project=chromium --update-snapshots
 
+RETRIES
+npx playwright test --config=playwright.config.ts --project=Chromium --retries=3
+
 
