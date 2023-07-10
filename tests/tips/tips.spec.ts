@@ -1,9 +1,14 @@
 import {test, expect} from '@playwright/test'
+import { getRundomNumber, getNumberString } from '../../utils/data-helpers';
 
 test.describe.only("Tips and Trics Section", () => {
-    test("TestInfo object", async ({page}, TestInfo) => {
+    test.only("TestInfo object", async ({page}, TestInfo) => {
         await page.goto("https://www.example.com");
         //console.log(TestInfo.title);
+        let newNumber = await getRundomNumber();
+        console.log(newNumber);
+        let newString = await getNumberString();
+        console.log(newString);
 
     })
 
@@ -38,7 +43,7 @@ test.describe.only("Tips and Trics Section", () => {
         await page.mouse.up();
     })
 
-    test.only("Multiple browser tabs inside 1 browse", async({browser}) => {
+    test("Multiple browser tabs inside 1 browse", async({browser}) => {
         const context = await browser.newContext();
         const page1 = await context.newPage();
         const page2 = await context.newPage();
